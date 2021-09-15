@@ -1,0 +1,22 @@
+@charset "UTF-8";
+header#cabecalho h1 {
+    font-size: 50pt;
+    color: black;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    position: relative;
+    text-align: center;
+    margin-bottom: 80px;
+}
+
+div#interface input#campoTarefa {
+    font-size: 20pt;
+    color: black;
+    position: relative;
+    text-align: left;
+    width: 40%;
+    margin-left: 25%;
+}
+
+div#interface button#btAdd {
+    font-size: 20pt;
+}
