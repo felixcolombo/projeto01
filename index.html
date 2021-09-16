@@ -23,11 +23,36 @@
 
         <button id='btAdd' onclick='addTarefa()'>Adicionar</button>
 
+        <div id='boxLista'>
+            <ul id='minhaLista'>
 
+            </ul>
+
+        </div>
 
     </div>
 
     <script>
+        var item
+        var ul = document.getElementById('minhaLista')
+        var li
+        var itemId
+
+        function addTarefa() {
+            item = document.getElementById('campoTarefa').value.trim()
+            if (item != '') {
+                itemId = ul.childElementCount
+                li = criarItemLista(item, itemId)
+                ul.appendChild(li)
+            }
+        }
+
+        function criarItemLista() {
+            let li = document.createElement('li')
+            li.setAttribute('index', itemId)
+            li.appendChild(document.createTextNode(item))
+            return (li)
+        }
     </script>
 </body>
 
