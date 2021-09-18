@@ -1,4 +1,13 @@
 @charset "UTF-8";
+div#interface {
+    max-width: 700px;
+    max-height: 800px;
+    margin: auto;
+    background-color: dimgray;
+    height: 800px;
+    border: 2px solid;
+}
+
 header#cabecalho h1 {
     font-size: 50pt;
     color: black;
@@ -13,10 +22,47 @@ div#interface input#campoTarefa {
     color: black;
     position: relative;
     text-align: left;
-    width: 40%;
-    margin-left: 25%;
+    width: 50%;
+    margin-left: 16%;
 }
 
 div#interface button#btAdd {
     font-size: 20pt;
+}
+
+div#interface div#boxLista {
+    max-width: 670px;
+    max-height: 505px;
+    margin: auto;
+    list-style-type: none;
+    padding: 10px;
+    background: snow;
+    margin-top: 30px;
+    overflow-y: auto;
+}
+
+div#interface div#boxLista button#btExcluir {
+    color: red;
+    float: right;
+}
+
+div#interface div#boxLista ul#minhaLista {
+    list-style-type: none;
+}
+
+div#interface div#boxLista li {
+    border-bottom: 1px solid;
+    border-bottom-right-radius: 5px;
+    height: 25px;
+    margin: 10px 30px 10px 0;
+}
+
+div#interface div#boxLista #bxMarcar {
+    color: red;
+    float: left;
+    margin-right: 20px;
+}
+
+.tarefaRealizada {
+    text-decoration: line-through;
 }
