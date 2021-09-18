@@ -23,12 +23,79 @@
 
         <button id='btAdd' onclick='addTarefa()'>Adicionar</button>
 
+        <div id='boxLista'>
+            <ul id='minhaLista'>
+
+            </ul>
+
+        </div>
 
 
     </div>
 
-    <script>
+    <script id='lista'>
+        var item
+        var ul = document.getElementById('minhaLista')
+        var li
+        var itemId
+        var tarefas
+
+        function addTarefa() {
+            item = document.getElementById('campoTarefa').value.trim()
+            if (item != '') {
+                itemId = ul.childElementCount
+                li = criarItemLista(item, itemId)
+                li.appendChild(criarBtExcluir(itemId))
+                li.appendChild(criarBxMarcar(itemId))
+                ul.appendChild(li)
+
+            }
+        }
+
+        function criarItemLista() {
+            let li = document.createElement('li')
+            li.setAttribute('index', itemId)
+            li.appendChild(document.createTextNode(item))
+            return (li)
+
+        }
+
+        function criarBtExcluir() {
+            let btExcluir = document.createElement('button')
+            btExcluir.setAttribute('onclick', 'excluirTarefa(' + itemId + ')')
+            btExcluir.innerHTML = 'Excluir'
+            btExcluir.id = 'btExcluir'
+            return btExcluir
+        }
+
+        function excluirTarefa(itemId) {
+            for (let i = 0; i < ul.childNodes.length; i++) {
+                if (ul.children[i].getAttribute('index') == itemId) {
+                    ul.children[i].remove()
+                }
+            }
+
+        }
+
+        function criarBxMarcar() {
+            let bxMarcar = document.createElement('input')
+            bxMarcar.setAttribute('type', 'checkbox')
+            bxMarcar.setAttribute('onclick', 'marcarTarefa(' + itemId + ')')
+            bxMarcar.id = 'bxMarcar'
+            return bxMarcar
+        }
+
+        function marcarTarefa(itemId) {
+            for (let i = 0; i < ul.childNodes.length; i++) {
+                if (ul.children[i].getAttribute('index') == itemId) {
+                    ul.children[i].classList.toggle('tarefaRealizada')
+
+                }
+            }
+        }
+        1
     </script>
 </body>
+
 
 </html>
